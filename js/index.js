@@ -40,25 +40,31 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 let a = document.querySelectorAll("a");
+// Destructuring 
 let [h1Text, buttonText, imgSrcUrl] = Object.values(siteContent["cta"]);
 let h1 = document.querySelector(".cta-text > h1");
 let button = document.querySelector(".cta-text > button");
 let img = document.getElementById("cta-img");
+// More destructuring , tail properties inserting into restOfObJ array
 let [featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj] = Object.values(siteContent["main-content"])
 let featuresH4 = document.querySelector(".top-content > .text-content > h4");
 let featuresText = document.querySelector(".top-content > .text-content > p");
 let aboutH4 = document.querySelector(".top-content").lastElementChild.firstElementChild;
 let aboutText = document.querySelector(".top-content").lastElementChild.lastElementChild;
+// Destructuring restOfObj array
 let [midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont] = restOfObj;
 let middleImg = document.getElementById("middle-img");
 let serv = document.querySelectorAll(".bottom-content > .text-content")[0];
 let prod = serv.nextElementSibling;
 let vis = prod.nextElementSibling;
+// Destructuring the content subObject
 let [contH4Cont, addrCont, phoneCont, emailCont] = Object.values(siteContent["contact"]);
+// Destructuring ignores text nodes with commas
 let [,contH4,,addr,,phone,,email,] = document.querySelector(".contact")["childNodes"];
 let footerCont = siteContent["footer"]["copyright"];
 let addrContBr = addrCont.split(" ");
 let nav = document.querySelector("nav");
+// Logs
 console.log("logo", logo)
 console.log("a", a)
 console.log("[h1Text, buttonText, imgSrcUrl]", [h1Text, buttonText, imgSrcUrl])
