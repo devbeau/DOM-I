@@ -82,29 +82,42 @@ console.log("nav", nav)
 console.log("addrContBr", addrContBr)
 
 
+// Header 
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 a.forEach((el, ind) => el.textContent = siteContent["nav"][`nav-item-${ind}`])
 h1.textContent = h1Text;
 button.textContent = buttonText;
 img.setAttribute('src', imgSrcUrl);
+
+// Top Content
 featuresH4.textContent = featuresTextH4;
 featuresText.textContent = featuresTextContent;
 aboutH4.textContent = aboutTextH4;
 aboutText.textContent = aboutTextContent;
+
+// Middle Image
 middleImg.setAttribute('src', midImg);
+
+// Bottom Content
 serv.firstElementChild.textContent = servTextH4;
 serv.lastElementChild.textContent = servTextCont;
 prod.firstElementChild.textContent = prodTextH4;
 prod.lastElementChild.textContent = prodTextCont;
 vis.firstElementChild.textContent = visTextH4;
 vis.lastElementChild.textContent = visTextCont;
+
+// Address
 contH4.textContent = contH4Cont;
 addr.textContent = addrCont;
 phone.textContent = phoneCont;
 email.textContent = emailCont;
+
+// Footer
 document.querySelector("footer > p").textContent = footerCont;
 
+// Change Nav Items To Green
 a.forEach((el) => el.style.color = 'green');
+// Create two items and append and prepend them
 nav.appendChild(document.createElement("a")).setAttribute('class', "created");
 document.querySelector(".created").textContent = "Created";
 let newA = document.createElement("a");
@@ -112,6 +125,8 @@ console.log("newA", newA)
 newA.setAttribute('class', "prepended");
 newA.textContent = "prepended";
 nav.prepend(newA);
+// Insert breaks in h1
 h1.innerHTML = h1Text.split(" ").join("<br> ");
+// Insert break in address
 addrContBr[3] += "<br>";
 addr.innerHTML = addrContBr.join(" ");
