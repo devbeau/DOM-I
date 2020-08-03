@@ -39,4 +39,57 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+let a = document.querySelectorAll("a");
+let [h1Text, buttonText, imgSrcUrl] = Object.values(siteContent["cta"]);
+let h1 = document.querySelector(".cta-text > h1");
+let button = document.querySelector(".cta-text > button");
+let img = document.getElementById("cta-img");
+let [featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj] = Object.values(siteContent["main-content"])
+let featuresH4 = document.querySelector(".top-content > .text-content > h4");
+let featuresText = document.querySelector(".top-content > .text-content > p");
+let aboutH4 = document.querySelector(".top-content").lastElementChild.firstElementChild;
+let aboutText = document.querySelector(".top-content").lastElementChild.lastElementChild;
+let [midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont] = restOfObj;
+let middleImg = document.getElementById("middle-img");
+let serv = document.querySelectorAll(".bottom-content > .text-content")[0];
+let prod = serv.nextElementSibling;
+let vis = prod.nextElementSibling;
+let [contH4Cont, addrCont, phoneCont, emailCont] = Object.values(siteContent["contact"]);
+let [,contH4,,addr,,phone,,email,] = document.querySelector(".contact")["childNodes"];
+let footerCont = siteContent["footer"]["copyright"];
+let nav = document.querySelector("nav");
+let addrContBr = addrCont.split(" ");
+
+
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+a.forEach((el, ind) => el.textContent = siteContent["nav"][`nav-item-${ind}`])
+h1.textContent = h1Text;
+button.textContent = buttonText;
+img.setAttribute('src', imgSrcUrl);
+featuresH4.textContent = featuresTextH4;
+featuresText.textContent = featuresTextContent;
+aboutH4.textContent = aboutTextH4;
+aboutText.textContent = aboutTextContent;
+middleImg.setAttribute('src', midImg);
+serv.firstElementChild.textContent = servTextH4;
+serv.lastElementChild.textContent = servTextCont;
+prod.firstElementChild.textContent = prodTextH4;
+prod.lastElementChild.textContent = prodTextCont;
+vis.firstElementChild.textContent = visTextH4;
+vis.lastElementChild.textContent = visTextCont;
+contH4.textContent = contH4Cont;
+addr.textContent = addrCont;
+phone.textContent = phoneCont;
+email.textContent = emailCont;
+document.querySelector("footer > p").textContent = footerCont;
+
+a.forEach((el) => el.style.color = 'green');
+nav.appendChild(document.createElement("a")).setAttribute('class', "created");
+document.querySelector(".created").textContent = "Created";
+let newA = document.createElement("a");
+newA.setAttribute('class', "prepended");
+newA.textContent = "prepended";
+nav.prepend(newA);
+h1.innerHTML = h1Text.split(" ").join("<br> ");
+addrContBr[3] += "<br>";
+addr.innerHTML = addrContBr.join(" ");
