@@ -39,46 +39,46 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-console.log("logo", logo)
 let a = document.querySelectorAll("a");
-console.log("a", a)
 let [h1Text, buttonText, imgSrcUrl] = Object.values(siteContent["cta"]);
-console.log("[h1Text, buttonText, imgSrcUrl]", [h1Text, buttonText, imgSrcUrl])
 let h1 = document.querySelector(".cta-text > h1");
-console.log("h1", h1)
 let button = document.querySelector(".cta-text > button");
-console.log("button", button)
 let img = document.getElementById("cta-img");
-console.log("img", img)
 let [featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj] = Object.values(siteContent["main-content"])
-console.log("[featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj]", [featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj])
 let featuresH4 = document.querySelector(".top-content > .text-content > h4");
-console.log("featuresH4", featuresH4)
 let featuresText = document.querySelector(".top-content > .text-content > p");
-console.log("featuresText", featuresText)
 let aboutH4 = document.querySelector(".top-content").lastElementChild.firstElementChild;
-console.log("aboutH4", aboutH4)
 let aboutText = document.querySelector(".top-content").lastElementChild.lastElementChild;
-console.log("aboutText", aboutText)
 let [midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont] = restOfObj;
-console.log("[midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont]", [midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont])
 let middleImg = document.getElementById("middle-img");
-console.log("middleImg", middleImg)
 let serv = document.querySelectorAll(".bottom-content > .text-content")[0];
-console.log("serv", serv)
 let prod = serv.nextElementSibling;
-console.log("prod", prod)
 let vis = prod.nextElementSibling;
-console.log("vis", vis)
 let [contH4Cont, addrCont, phoneCont, emailCont] = Object.values(siteContent["contact"]);
-console.log("[contH4Cont, addrCont, phoneCont, emailCont]", [contH4Cont, addrCont, phoneCont, emailCont])
 let [,contH4,,addr,,phone,,email,] = document.querySelector(".contact")["childNodes"];
-console.log("[,contH4,,addr,,phone,,email,]", [,contH4,,addr,,phone,,email,])
 let footerCont = siteContent["footer"]["copyright"];
-console.log("footerCont", footerCont)
-let nav = document.querySelector("nav");
-console.log("nav", nav)
 let addrContBr = addrCont.split(" ");
+let nav = document.querySelector("nav");
+console.log("logo", logo)
+console.log("a", a)
+console.log("[h1Text, buttonText, imgSrcUrl]", [h1Text, buttonText, imgSrcUrl])
+console.log("h1", h1)
+console.log("button", button)
+console.log("img", img)
+console.log("[featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj]", [featuresTextH4, featuresTextContent, aboutTextH4, aboutTextContent, ...restOfObj])
+console.log("featuresH4", featuresH4)
+console.log("featuresText", featuresText)
+console.log("aboutH4", aboutH4)
+console.log("[midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont]", [midImg, servTextH4, servTextCont, prodTextH4, prodTextCont, visTextH4, visTextCont])
+console.log("aboutText", aboutText)
+console.log("middleImg", middleImg)
+console.log("serv", serv)
+console.log("prod", prod)
+console.log("vis", vis)
+console.log("[contH4Cont, addrCont, phoneCont, emailCont]", [contH4Cont, addrCont, phoneCont, emailCont])
+console.log("[,contH4,,addr,,phone,,email,]", [,contH4,,addr,,phone,,email,])
+console.log("footerCont", footerCont)
+console.log("nav", nav)
 console.log("addrContBr", addrContBr)
 
 
