@@ -90,7 +90,7 @@ console.log("addrContBr", addrContBr)
 
 // Header 
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-a.forEach((el, ind) => el.textContent = siteContent["nav"][`nav-item-${ind}`])
+a.forEach((el, ind) => el.textContent = siteContent["nav"][`nav-item-${ind+1}`])
 h1.textContent = h1Text;
 button.textContent = buttonText;
 img.setAttribute('src', imgSrcUrl);
